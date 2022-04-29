@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 import itemsStyle from './Items.module.css'
 const Items = () => {
     const [items, setItems] = useState([])
-
+    const slice = items.slice(0, 6)
     useEffect(() => {
         fetch('http://localhost:5000/item')
             .then(res => res.json())
@@ -13,7 +13,7 @@ const Items = () => {
         <div className='grid gap-x-8 gap-y-4  grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
 
             {
-                items.map(item => <Item
+                slice.map(item => <Item
                     key={item._id}
                     item={item}
                 ></Item>)
