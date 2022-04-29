@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Hiking backpack",
+        "price": "4,700",
+        "description": "Hiking backpacks are typically made of nylon.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "Hiking boots",
+        "price": "4,200",
+        "description": "Hiking (walking) boots are footwear specifically designed for protecting the feet .",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "map",
+        "price": "5,500",
+        "description": "A map that shows the contours of the land.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "compass",
+        "price": "5,500",
+        "description": "The most typical form of compasses for hiking are baseplate compasses.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "First-aid kit",
+        "price": "5,500",
+        "description": "First Aid Basic Care.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "Knife",
+        "price": "5,500",
+        "description": "A multi-tool or fixed blade hiking knife is a must-have piece of equipment .",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "GPS device",
+        "price": "5,500",
+        "description": "Here are the best hiking GPS devices of 2022.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "stove",
+        "price": "5,500",
+        "description": "Canister stoves: These easy-to-use.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "sunglasses",
+        "price": "5,500",
+        "description": "The most suitable glasses for outdoor sports.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    },
+    {
+        "name": "Headlamp",
+        "price": "5,500",
+        "description": "Headlamps may also be used in adventure races.",
+        "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
+        "quantity": "5",
+        "supplier": "Raiyan"
+    }
+]
