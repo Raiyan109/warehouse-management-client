@@ -7,6 +7,7 @@ import ManageItems from "./Pages/ManageItems/ManageItems";
 import MyItems from "./Pages/MyItems/MyItems";
 import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/my" element={<MyItems></MyItems>}></Route>
         <Route path="/inventory" element={<Inventory></Inventory>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
 
