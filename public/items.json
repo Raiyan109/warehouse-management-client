@@ -5,7 +5,7 @@
         "description": "Hiking backpacks are typically made of nylon.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Khalid"
     },
     {
         "name": "Hiking boots",
@@ -13,7 +13,7 @@
         "description": "Hiking (walking) boots are footwear specifically designed for protecting the feet .",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Farhan"
     },
     {
         "name": "map",
@@ -21,7 +21,7 @@
         "description": "A map that shows the contours of the land.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Mostofa"
     },
     {
         "name": "compass",
@@ -29,7 +29,7 @@
         "description": "The most typical form of compasses for hiking are baseplate compasses.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Habib"
     },
     {
         "name": "First-aid kit",
@@ -37,7 +37,7 @@
         "description": "First Aid Basic Care.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Tutul"
     },
     {
         "name": "Knife",
@@ -45,7 +45,7 @@
         "description": "A multi-tool or fixed blade hiking knife is a must-have piece of equipment .",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Helal"
     },
     {
         "name": "GPS device",
@@ -53,7 +53,7 @@
         "description": "Here are the best hiking GPS devices of 2022.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Montu"
     },
     {
         "name": "stove",
@@ -61,7 +61,7 @@
         "description": "Canister stoves: These easy-to-use.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Khadija"
     },
     {
         "name": "sunglasses",
@@ -69,7 +69,7 @@
         "description": "The most suitable glasses for outdoor sports.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Saad"
     },
     {
         "name": "Headlamp",
@@ -77,6 +77,6 @@
         "description": "Headlamps may also be used in adventure races.",
         "img": "https://i.ibb.co/N2jDgvq/pexels-lalu-fatoni-732632.jpg",
         "quantity": "5",
-        "supplier": "Raiyan"
+        "supplier": "Mahmud"
     }
 ]
