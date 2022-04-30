@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import itemStyle from './Item.module.css'
 const Item = ({ item }) => {
     const { name, img, description, price, quantity, supplier } = item
@@ -12,7 +13,7 @@ const Item = ({ item }) => {
                 <h1>Supplier: {supplier}</h1>
                 <div className='flex justify-between items-center'>
                     <span className='text-3xl font-bold text-gray-900 dark:text-white'>${price}</span>
-                    <button className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>Update</button>
+                    <Link to={'/inventory'} className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>Update</Link>
                 </div>
             </div>
 
