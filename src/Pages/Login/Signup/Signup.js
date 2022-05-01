@@ -1,18 +1,75 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../../firebase.init';
+import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Signup = () => {
+    const navigate = useNavigate()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [error, setError] = useState('')
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error1,
+    ] = useCreateUserWithEmailAndPassword(auth);
+
+    // if (error) {
+    //     return <p>Error:{error.message}</p>
+    // }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (user) {
+        navigate('/home')
+    }
+
+    const handleEmailChange = event => {
+        const emailRegex = /\S+@\S+\.\S+/
+        const validEmail = emailRegex.test(event.target.value)
+
+        if (validEmail) {
+            setEmail(event.target.value)
+        }
+        else {
+            setError('Invalid Email')
+        }
+    }
+
+    const handlePasswordChange = event => {
+        const passwordRegex = /.{6,}/
+        const validPass = passwordRegex.test(event.target.value)
+        if (validPass) {
+            setPassword(event.target.value)
+        }
+        else {
+            setError('MInimum 6 charachters')
+        }
+
+    }
+
+
+    const handleSignup = event => {
+        event.preventDefault()
+        const email = event.target.email.value
+        const password = event.target.password.value
+
+        createUserWithEmailAndPassword(email, password)
+    }
     return (
         <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             <div className="max-w-lg mx-auto">
-                <h1 className="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">Get started today</h1>
+                <h1 className="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">Sign up</h1>
 
                 {/* <p className="max-w-md mx-auto mt-4 text-center text-gray-500">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt dolores deleniti inventore quaerat
                     mollitia?
                 </p> */}
 
-                <form action="" className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                <form onSubmit={handleSignup} className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
                     <p className="text-lg font-medium">Sign up to your account</p>
 
                     <div>
@@ -20,6 +77,7 @@ const Signup = () => {
 
                         <div className="relative mt-1">
                             <input
+                                onChange={handleEmailChange}
                                 type="email"
                                 id="email"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
@@ -50,6 +108,7 @@ const Signup = () => {
 
                         <div className="relative mt-1">
                             <input
+                                onChange={handlePasswordChange}
                                 type="password"
                                 id="password"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
@@ -81,13 +140,15 @@ const Signup = () => {
                         </div>
                     </div>
 
-                    <button type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                        Sign in
+                    <button
+
+                        type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
+                        Sign up
                     </button>
 
                     <p className="text-sm text-center text-gray-500">
                         Already have an account?
-                        <a className="underline" href="">Sign in</a>
+                        <Link className="underline" to="/login">Log in</Link>
                     </p>
                     <SocialLogin></SocialLogin>
                 </form>
