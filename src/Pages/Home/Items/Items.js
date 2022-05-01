@@ -5,7 +5,9 @@ const Items = () => {
     const [items, setItems] = useState([])
     const slice = items.slice(0, 6)
     useEffect(() => {
-        fetch('http://localhost:5000/item')
+        const url = 'http://localhost:5000/item'
+        console.log(url)
+        fetch(url)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
