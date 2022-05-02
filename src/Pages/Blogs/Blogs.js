@@ -28,10 +28,7 @@ const Blogs = () => {
                 </summary>
 
                 <p className="px-4 mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                    JavaScript is a easy programming language that rolls in any browser JavaScript Engine. And Node JS is an interpreter or running environment for a JavaScript programming language , it needs libraries that can easily be accessed from JavaScript programming for better use.
                 </p>
             </details>
 
@@ -60,10 +57,10 @@ const Blogs = () => {
                 </summary>
 
                 <p className="px-4 mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                    If you want to write some kind of detached program or server in Javascript, then you can use nodejs.
+                    And, if you need to store data in a way that you can efficiently query or update it later, then you would usually use some form of database.
+                    Node.js and MongoDb - These two technologies are for different parts of a typical web server system. You don't replace one for the other. Rather than, you can use them together.
+                    You should know that Nodejs is a platform to write js code, and MongoDB is a database which can be used with node.js.
                 </p>
             </details>
 
@@ -92,10 +89,9 @@ const Blogs = () => {
                 </summary>
 
                 <p className="px-4 mt-4 leading-relaxed text-gray-700">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                    molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                    voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                    earum similique!
+                    1. SQL databases are vertically expandable, and NoSQL databases are horizontally ascendable.
+                    2. SQL databases are table-based, and NoSQL databases are document, key-value, graph, or wide-column stored.
+                    3. SQL databases are better for multi-row deals, and in the other side NoSQL is better for unshaped data like documents or JSON.
                 </p>
             </details>
         </div>
