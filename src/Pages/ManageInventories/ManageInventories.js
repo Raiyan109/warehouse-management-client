@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ManageInventory from '../ManageInventory/ManageInventory';
 
 const ManageInventories = () => {
+    const navigate = useNavigate()
+
+    const handleNavigate = () => {
+        navigate('/addItem')
+    }
     const [items, setItems] = useState([])
 
     useEffect(() => {
@@ -19,6 +25,13 @@ const ManageInventories = () => {
                     item={item}
                 ></ManageInventory>)
             }
+
+            <div>
+                <button onClick={handleNavigate} className="text-pink-500 text-right float-right animate-bounce background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 h-14 bg-orange-300" type="button"
+                >
+                    Add new item
+                </button>
+            </div>
         </div>
     );
 };
