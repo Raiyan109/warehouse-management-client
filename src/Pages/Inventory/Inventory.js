@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import IncreaseQuantity from '../IncreaseQuantity/IncreaseQuantity';
+import ManageInventoriesButton from '../ManageInventoriesButton/ManageInventoriesButton';
 
 
 const Inventory = ({ item }) => {
@@ -66,6 +67,7 @@ const Inventory = ({ item }) => {
                 </div>
 
             </section>
+            <ManageInventoriesButton></ManageInventoriesButton>
             <IncreaseQuantity></IncreaseQuantity>
         </div>
 

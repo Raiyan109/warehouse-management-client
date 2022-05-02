@@ -1,4 +1,5 @@
 import React from 'react';
+import ManageInventoriesButton from '../../ManageInventoriesButton/ManageInventoriesButton';
 import Banner from '../Banner/Banner';
 import CallToAction from '../CallToAction/CallToAction';
 import DesignOwn from '../DesignOwn/DesignOwn';
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Items></Items>
+            <ManageInventoriesButton></ManageInventoriesButton>
             <CallToAction></CallToAction>
             <DesignOwn></DesignOwn>
         </div>
