@@ -14,11 +14,11 @@ const DesignOwn = () => {
                     className="relative w-full p-6 tracking-widest text-center text-white transition-colors bg-red-700 sm:w-2/3 group-hover:bg-black"
                 >
                     <strong className="text-lg uppercase">
-                        Custom Shop
+                        Hiking Shop
                     </strong>
 
                     <p className="mt-1 text-xs font-medium uppercase">
-                        Design your own
+                        Choose your own Hiking Items
                     </p>
                 </div>
             </a>
