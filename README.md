@@ -1,6 +1,6 @@
 # HIKER'S WAREHOUSE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Hiking Warehouse](https://assignment-11-7e69c.web.app/).
 
 - This is a unique hiking gear inventory management website
 - I used here css modules
