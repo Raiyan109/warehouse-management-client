@@ -10,7 +10,7 @@ const Inventory = ({ item }) => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/item/${inventoryId}`
+        const url = `https://powerful-falls-63819.herokuapp.com/item/${inventoryId}`
         console.log(url)
         fetch(url)
             .then(res => res.json())
