@@ -1,59 +1,55 @@
 import React, { useState } from 'react';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth'
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth'
 import { auth } from '../../../firebase.init'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import Loading from '../Loading/Loading';
+import { useForm } from 'react-hook-form';
 
 const Login = () => {
-    const navigate = useNavigate()
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [error, setError] = useState('')
+
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
+    const { register, formState: { errors }, handleSubmit } = useForm();
 
     const [
         signInWithEmailAndPassword,
         user,
         loading,
-        error1,
+        error,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const handleEmailChange = event => {
-        const emailRegex = /\S+@\S+\.\S+/
-        const validEmail = emailRegex.test(event.target.value)
+    let signInError
 
-        if (validEmail) {
-            setEmail(event.target.value)
-        }
-        else {
-            setError('Invalid Email')
-        }
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
+
+    if (loading || gLoading) {
+        return <Loading></Loading>
     }
 
-    const handlePasswordChange = event => {
-        const passwordRegex = /.{6,}/
-        const validPass = passwordRegex.test(event.target.value)
-        if (validPass) {
-            setPassword(event.target.value)
-        }
-        else {
-            setError('MInimum 6 charachters')
-        }
-
+    if (error || gError) {
+        signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
     }
 
-    const handleLogin = (event) => {
-        event.preventDefault()
-
-        signInWithEmailAndPassword(email, password)
+    if (user || gUser) {
+        navigate(from, { replace: true });
     }
 
+
+
+    const onSubmit = data => {
+        console.log(data)
+        signInWithEmailAndPassword(data.email, data.password)
+    };
 
     return (
         <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
             <div className="max-w-lg mx-auto">
                 <h1 className="text-2xl font-bold text-center text-indigo-600 sm:text-3xl">Login</h1>
 
-                <form onSubmit={handleLogin} className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
+                <form onSubmit={handleSubmit(onSubmit)} className="p-8 mt-6 mb-0 space-y-4 rounded-lg shadow-2xl">
                     <p className="text-lg font-medium">Sign in to your account</p>
 
                     <div>
@@ -61,12 +57,26 @@ const Login = () => {
 
                         <div className="relative mt-1">
                             <input
-                                onChange={handleEmailChange}
+
                                 type="email"
                                 id="email"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                                 placeholder="Enter email"
+                                {...register("email", {
+                                    required: {
+                                        value: true,
+                                        message: 'Email is Required'
+                                    },
+                                    pattern: {
+                                        value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                                        message: 'Provide a valid email'
+                                    }
+                                })}
                             />
+                            <label class="label">
+                                {errors.email?.type === 'required' && <span class="label-text-alt text-red-500 ">{errors.email.message}</span>}
+                                {errors.email?.type === 'pattern' && <span class="label-text-alt text-red-500 ">{errors.email.message}</span>}
+                            </label>
 
                             <span className="absolute inset-y-0 inline-flex items-center right-4">
                                 <svg
@@ -92,12 +102,26 @@ const Login = () => {
 
                         <div className="relative mt-1">
                             <input
-                                onChange={handlePasswordChange}
+
                                 type="password"
                                 id="password"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                                 placeholder="Enter password"
+                                {...register("password", {
+                                    required: {
+                                        value: true,
+                                        message: 'password is Required'
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: 'Must be 6 charachters or longer'
+                                    }
+                                })}
                             />
+                            <label class="label">
+                                {errors.password?.type === 'required' && <span class="label-text-alt text-red-500 ">{errors.password.message}</span>}
+                                {errors.password?.type === 'minLength' && <span class="label-text-alt text-red-500 ">{errors.password.message}</span>}
+                            </label>
 
                             <span className="absolute inset-y-0 inline-flex items-center right-4">
                                 <svg
@@ -123,6 +147,7 @@ const Login = () => {
                             </span>
                         </div>
                     </div>
+                    {signInError}
 
                     <button type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
                         Log in
@@ -133,8 +158,7 @@ const Login = () => {
                         <Link className="underline" to="/signup">Sign up</Link>
                     </p>
                     <SocialLogin></SocialLogin>
-                    {error && <p>{error}</p>}
-                    {error1 && <p>{error1?.message}</p>}
+
                 </form>
             </div>
         </div>
