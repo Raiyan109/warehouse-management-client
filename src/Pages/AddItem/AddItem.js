@@ -4,7 +4,7 @@ const AddItem = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/item`
+        const url = `https://powerful-falls-63819.herokuapp.com/item`
         fetch(url, {
             method: "POST",
             headers: {
