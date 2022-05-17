@@ -7,6 +7,8 @@ import Loading from '../Loading/Loading';
 import { useForm } from 'react-hook-form';
 
 const Login = () => {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
 
@@ -34,14 +36,29 @@ const Login = () => {
     }
 
     if (user || gUser) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
     }
 
 
 
     const onSubmit = data => {
         console.log(data)
+
         signInWithEmailAndPassword(data.email, data.password)
+
+        fetch('http://localhost:5000/login', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                localStorage.setItem('accessToken', data.accessToken)
+                navigate(from, { replace: true });
+            })
     };
 
     return (
