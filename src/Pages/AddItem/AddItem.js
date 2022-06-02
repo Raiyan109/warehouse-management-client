@@ -27,7 +27,7 @@ const AddItem = () => {
                     <input placeholder='Price' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="number" {...register("price")} />
                     <input placeholder='Quantity' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="number" {...register("quantity")} />
                     <input placeholder='Photo URL' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="text" {...register("img")} />
-                    <input className='bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4' type="submit" value='Add new item' />
+                    <input className='bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4' type="submit" value='Add New Item' />
                 </form>
             </div>
         </div>

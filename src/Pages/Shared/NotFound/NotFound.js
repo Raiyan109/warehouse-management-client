@@ -23,7 +23,7 @@ const NotFound = () => {
                     </h6>
 
                     <p className="mb-8 text-center text-gray-500 md:text-lg">
-                        The page you’re looking for doesn’t exist.
+                        The page you are looking for doesnt exist.
                     </p>
 
                     <a
