@@ -18,7 +18,10 @@ const Contact = () => {
     };
 
     return (
-        <div className='m-4'>
+        <div className='my-16 mx-4'>
+            <div className='my-10'>
+                <h1 className="lg:text-7xl text-center font-extrabold text-transparent sm:text-5xl bg-clip-text bg-gradient-to-r from-green-300 via-blue-500 to-purple-600">Contact Us</h1>
+            </div>
             <form ref={form} onSubmit={sendEmail}>
                 <div className="mb-6">
                     <label for="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
