@@ -1,5 +1,6 @@
 import React from 'react';
 import ManageInventoriesButton from '../../ManageInventoriesButton/ManageInventoriesButton';
+import About from '../About';
 import Banner from '../Banner/Banner';
 import CallToAction from '../CallToAction/CallToAction';
 import Contact from '../Contact';
@@ -10,6 +11,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <About />
             <Items></Items>
             <ManageInventoriesButton></ManageInventoriesButton>
             <CallToAction></CallToAction>

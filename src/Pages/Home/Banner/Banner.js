@@ -18,7 +18,7 @@ const Banner = () => {
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4 mt-8">
-                            <a className="block w-full px-12 py-3 text-sm font-bold text-black bg-[#F2921D] border border-yellow-600 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring transition-all" href="/get-started">
+                            <a className="block w-full px-12 py-3 text-sm font-bold text-black bg-[#F2921D] border border-yellow-600 duration-300 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-white focus:outline-none focus:ring transition-all" href="/get-started">
                                 Explore Our Hiking Gear Inventory Today!
                             </a>
                         </div>
