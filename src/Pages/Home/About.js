@@ -3,7 +3,7 @@ import aboutImg from '../../images/DrawKit-daily-life-vector-illustration-12-rem
 import ManageInventoriesButton from '../ManageInventoriesButton/ManageInventoriesButton';
 const About = () => {
     return (
-        <div className="bg-white lg:[900px] py-12 sm:py-8 lg:py-12">
+        <div className="bg-white lg:[900px] py-12 sm:py-8 lg:py-12 my-20" style={{ fontFamily: '"Lato", sans-serif' }}>
             <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     <div>
