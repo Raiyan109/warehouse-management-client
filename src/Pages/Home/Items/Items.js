@@ -12,14 +12,16 @@ const Items = () => {
             .then(data => setItems(data))
     }, [])
     return (
-        <div className='grid gap-x-8 gap-y-4  grid-cols-1 md:grid-cols-3 lg:grid-cols-4'>
+        <div className='lg:h-[600px] sm:h-[450px] py-12 sm:py-8 lg:py-12 px-5 flex justify-center items-center'>
+            <div className='grid gap-x-8 gap-y-4  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 '>
 
-            {
-                slice.map(item => <Item
-                    key={item._id}
-                    item={item}
-                ></Item>)
-            }
+                {
+                    slice.map(item => <Item
+                        key={item._id}
+                        item={item}
+                    ></Item>)
+                }
+            </div>
         </div>
     );
 };
