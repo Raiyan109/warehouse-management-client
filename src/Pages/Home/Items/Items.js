@@ -5,7 +5,7 @@ const Items = () => {
     const [items, setItems] = useState([])
     const slice = items.slice(0, 6)
     useEffect(() => {
-        const url = 'https://powerful-falls-63819.herokuapp.com/item'
+        const url = 'http://localhost:5000/api/items'
         console.log(url)
         fetch(url)
             .then(res => res.json())
