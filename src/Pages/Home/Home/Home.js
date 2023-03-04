@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <About />
             <Items></Items>
-            <ManageInventoriesButton></ManageInventoriesButton>
+            {/* <ManageInventoriesButton></ManageInventoriesButton> */}
             <CallToAction></CallToAction>
             <DesignOwn></DesignOwn>
             <Contact />

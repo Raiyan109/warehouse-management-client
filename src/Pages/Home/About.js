@@ -1,8 +1,9 @@
 import React from 'react';
 import aboutImg from '../../images/DrawKit-daily-life-vector-illustration-12-removebg-preview.png'
+import ManageInventoriesButton from '../ManageInventoriesButton/ManageInventoriesButton';
 const About = () => {
     return (
-        <div className="bg-white lg:[900px] py-6 sm:py-8 lg:py-12">
+        <div className="bg-white lg:[900px] py-12 sm:py-8 lg:py-12">
             <div className="max-w-screen-xl px-4 md:px-8 mx-auto">
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     <div className=''>
@@ -21,6 +22,8 @@ const About = () => {
 
                             Our mission is to provide hikers with access to the best hiking gear and equipment at affordable prices. We work hard to ensure that our warehouse is stocked with a wide variety of high-quality products from reputable brands, and our knowledgeable staff are always available to offer expert advice and recommendations.
                         </p>
+
+                        <ManageInventoriesButton />
                     </div>
                 </div>
             </div>

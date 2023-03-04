@@ -9,7 +9,7 @@ const ManageInventoriesButton = () => {
     }
     return (
         <div>
-            <button onClick={handleNavigate} className="text-white  text-right float-right animate-bounce background-transparent font-bold uppercase px-8 py-3 outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 h-14 bg-gradient-to-r from-gray-900 to-blue-900" type="button"
+            <button onClick={handleNavigate} className="block w-full px-12 py-3 text-sm font-bold text-white bg-[#F2921D] border border-yellow-600 duration-300 rounded sm:w-auto active:text-opacity-75 hover:bg-transparent hover:text-black focus:outline-none focus:ring transition-all" type="button"
             >
                 <i className="fas fa-heart"></i> Manage Inventories
             </button>
