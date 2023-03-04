@@ -8,7 +8,7 @@ const ManageInventory = ({ item }) => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
             console.log('deleting item with id', _id);
-            const url = `https://powerful-falls-63819.herokuapp.com/item/${_id}`
+            const url = `https://hiking-warehouse-server.vercel.app/item/${_id}`
             fetch(url, {
                 method: 'DELETE'
             })

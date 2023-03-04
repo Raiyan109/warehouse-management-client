@@ -5,7 +5,7 @@ const IncreaseQuantity = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `https://powerful-falls-63819.herokuapp.com/item`
+        const url = `https://hiking-warehouse-server.vercel.app/item`
         fetch(url, {
             method: "POST",
             headers: {

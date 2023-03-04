@@ -11,7 +11,7 @@ const ManageInventories = () => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const url = 'https://powerful-falls-63819.herokuapp.com/item'
+        const url = 'https://hiking-warehouse-server.vercel.app/item'
         console.log(url)
         fetch(url)
             .then(res => res.json())
