@@ -35,18 +35,18 @@ const Inventory = ({ item }) => {
                         <h1 className="text-3xl font-extrabold sm:text-5xl">
                             {items?.name}
                             <strong className="font-extrabold text-rose-700 sm:block">
-                                {items?.price}
+                                ${items?.price}
                             </strong>
                         </h1>
 
                         <p className="max-w-lg mt-4 sm:leading-relaxed sm:text-xl">
                             {items?.description}
                         </p>
-                        <h1 className="text-sm font-bold sm:text-sm">
+                        <h1 className="text-sm font-bold sm:text-sm text-rose-700">
                             Quantity : {items?.quantity}
 
                         </h1>
-                        <h1 className="text-sm font-bold sm:text-sm">
+                        <h1 className="text-sm font-bold sm:text-sm text-rose-700">
                             Supplier : {items?.supplier}
 
                         </h1>
