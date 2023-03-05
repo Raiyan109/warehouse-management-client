@@ -8,7 +8,7 @@ const ManageInventory = ({ item }) => {
         const proceed = window.confirm('Are you sure you want to delete?')
         if (proceed) {
             console.log('deleting item with id', _id);
-            const url = `https://hiking-warehouse-server.vercel.app/item/${_id}`
+            const url = `https://hiking-warehouse-server.vercel.app/api/items/${_id}`
             fetch(url, {
                 method: 'DELETE'
             })
@@ -34,7 +34,7 @@ const ManageInventory = ({ item }) => {
                     <p>{supplier}</p>
                     <button
                         onClick={() => handleItemDelete(_id)}
-                        href="#" class="bg-green-500 hover:bg-green-400 text-white px-4 py-2 inline-block mt-4 rounded">Delete</button>
+                        href="#" class="bg-[#F2921D] border border-transparent hover:bg-transparent hover:text-[#F2921D] hover:border-[#F2921D] hover:border-1 text-white px-4 py-2 inline-block mt-4 rounded">Delete</button>
                 </div>
             </div>
 

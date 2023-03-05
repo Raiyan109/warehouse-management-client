@@ -10,14 +10,24 @@ const Inventory = ({ item }) => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const url = `https://hiking-warehouse-server.vercel.app/api/items/${inventoryId}`
+        const url = `http://localhost:5000/api/items/${inventoryId}`
         console.log(url)
         fetch(url)
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
 
-
+    const handleDelivered = async ({ inventoryId }) => {
+        try {
+            const response = await fetch(`http://localhost:5000/api/items/${inventoryId}/decrease`, {
+                method: 'PATCH'
+            });
+            const data = await response.json();
+            setItems((prevItems) => Array.isArray(prevItems) ? prevItems.map((item) => item._id === data._id ? data : item) : []);
+        } catch (error) {
+            console.error(error);
+        }
+    };
 
     return (
         <div>
@@ -52,9 +62,12 @@ const Inventory = ({ item }) => {
                         </h1>
 
                         <div className="flex flex-wrap gap-4 mt-8 text-center">
-                            <a className="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring" href="/get-started">
+                            <button className="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-rose-600 sm:w-auto active:bg-rose-500 hover:bg-rose-700 focus:outline-none focus:ring"
+                                type='submit'
+                                onClick={handleDelivered}
+                            >
                                 Delivered
-                            </a>
+                            </button>
 
 
 

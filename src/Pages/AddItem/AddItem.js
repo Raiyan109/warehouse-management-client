@@ -19,7 +19,7 @@ const AddItem = () => {
     };
     return (
         <div>
-            <div className='h-screen my-2 bg-amber-400 flex justify-center items-center'>
+            <div className='h-screen my-2 bg-[#F2921D] flex justify-center items-center'>
                 <form className='w-full max-w-xs bg-white flex flex-col py-5 px-8 rounded-lg shadow-lg' onSubmit={handleSubmit(onSubmit)}>
                     <input placeholder='Name' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' {...register("name", { required: true, maxLength: 20 })} />
                     <textarea placeholder='Description' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' {...register("description")} />
@@ -27,7 +27,7 @@ const AddItem = () => {
                     <input placeholder='Price' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="number" {...register("price")} />
                     <input placeholder='Quantity' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="number" {...register("quantity")} />
                     <input placeholder='Photo URL' className='text-gray-700 shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-3' type="text" {...register("img")} />
-                    <input className='bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4' type="submit" value='Add New Item' />
+                    <input className='bg-[#F2921D] border border-transparent hover:bg-transparent hover:text-[#F2921D] hover:border-[#F2921D] hover:border-1 text-white font-bold rounded py-2 px-4 cursor-pointer' type="submit" value='Add New Item' />
                 </form>
             </div>
         </div>
