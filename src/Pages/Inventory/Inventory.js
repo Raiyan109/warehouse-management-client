@@ -10,7 +10,7 @@ const Inventory = ({ item }) => {
     const [items, setItems] = useState([])
 
     useEffect(() => {
-        const url = `http://localhost:5000/api/items/${inventoryId}`
+        const url = `https://hiking-warehouse-server.vercel.app/api/items/${inventoryId}`
         console.log(url)
         fetch(url)
             .then(res => res.json())
