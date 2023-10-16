@@ -7,6 +7,7 @@ import Contact from '../Contact';
 import DesignOwn from '../DesignOwn/DesignOwn';
 import Items from '../Items/Items';
 import homeStyle from './Home.module.css'
+import ShopFeatures from '../ShopFeatures';
 const Home = () => {
     return (
         <div>
@@ -14,6 +15,7 @@ const Home = () => {
             <About />
             <Items></Items>
             {/* <ManageInventoriesButton></ManageInventoriesButton> */}
+            <ShopFeatures />
             <CallToAction></CallToAction>
             <DesignOwn></DesignOwn>
             <Contact />
