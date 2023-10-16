@@ -10,6 +10,7 @@ import homeStyle from './Home.module.css'
 import ShopFeatures from '../ShopFeatures';
 import ShopByCategory from '../ShopByCategory';
 import Adventure from '../Adventure/Adventure';
+import Brands from '../Brands';
 const Home = () => {
     return (
         <div>
@@ -20,6 +21,7 @@ const Home = () => {
             <ShopFeatures />
             <ShopByCategory />
             <Adventure />
+            <Brands />
             <CallToAction></CallToAction>
             <DesignOwn></DesignOwn>
             <Contact />

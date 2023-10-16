@@ -20,8 +20,8 @@ const ShopByCategory = () => {
                             <div className="flex flex-wrap justify-center text-center mb-24">
                                 <div className="w-full lg:w-6/12 px-4">
 
-                                    <h1 className='text-center text-6xl'>Manage Your Items by </h1>
-                                    <h1 className='text-center text-6xl mb-14'>Our Warehouse Catagories</h1>
+                                    <h1 className='text-center text-4xl md:text-6xl'>Manage Your Items by </h1>
+                                    <h1 className='text-center text-4xl md:text-6xl mb-14'>Our Warehouse Catagories</h1>
                                 </div>
                             </div>
 

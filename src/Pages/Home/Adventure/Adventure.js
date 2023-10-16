@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom';
 const Adventure = () => {
     return (
         <div>
-            <div className=' py-12 sm:py-8 lg:py-12 md:mb-62 px-20 lg:px-32' style={{ fontFamily: '"Lato", sans-serif' }}>
-                <h1 className='text-center text-6xl mb-14'>WE ARE HERE FOR EVERY ADVENTURE.</h1>
+            <div className='bg-gray-100 py-12 sm:py-8 lg:py-12 md:mb-62 px-20 lg:px-32' style={{ fontFamily: '"Lato", sans-serif' }}>
+                <h1 className='text-center text-4xl md:text-6xl mb-14'>WE ARE HERE FOR EVERY ADVENTURE.</h1>
                 <div className='flex justify-center items-center'>
-                    <p className='text-center text-xl'>Let our expert team help you make the most of your next adventure. From expert advice to in-store services and Rewards.</p>
+                    <p className='text-center text-lg md:text-xl'>Let our expert team help you make the most of your next adventure. From expert advice to in-store services and Rewards.</p>
                 </div>
 
                 <div className='flex justify-center items-center py-9'>
