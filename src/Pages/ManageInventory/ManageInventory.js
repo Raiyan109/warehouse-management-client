@@ -39,6 +39,8 @@ const ManageInventory = ({ item }) => {
             </div>
 
 
+            {/* <!-- component --> */}
+
 
         </div>
     );
