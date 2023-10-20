@@ -49,15 +49,15 @@ const Header = () => {
                 <div className={`md:flex md:items-center w-full md:w-auto ${menu ? "block" : "hidden"}`} id="mobile-menu">
                     <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
 
-                        <NavLink to="/" className="block py-2 pr-4 pl-3 text-[#F2921D] bg-blue-700 rounded md:bg-transparent md:text-yellow-700 duration-300 md:p-0 dark:text-white">Home</NavLink>
+                        <NavLink to="/" className="block py-3 mt-1 pr-4 pl-3 text-[#F2921D] bg-blue-700 rounded md:bg-transparent md:text-yellow-700 duration-300 md:p-0 dark:text-white">Home</NavLink>
 
                         {/* <NavLink to="/blogs" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blogs</NavLink> */}
 
-                        <NavLink to="/manage" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Manage items</NavLink>
+                        {/* <NavLink to="/manage" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Manage items</NavLink> */}
 
-                        <NavLink to="/addItem" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Add items</NavLink>
+                        {/* <NavLink to="/addItem" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Add items</NavLink> */}
 
-                        <NavLink to="/my" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My items</NavLink>
+                        {/* <NavLink to="/my" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My items</NavLink> */}
 
                         {stockAuth?.user ? <button className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={logout}>Signout</button> : <NavLink to="/login" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>}
 

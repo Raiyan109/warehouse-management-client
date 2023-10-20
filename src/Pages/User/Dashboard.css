@@ -34,24 +34,18 @@
 }
 
 .sidebar-nav ul li:nth-child(1):after {
-    content: "Manage Items";
-    line-height: 30px;
-    margin-top: 20px;
-    font-weight: 500;
+    content: "Manage";
+    line-height: 88px;
 }
 
 .sidebar-nav ul li:nth-child(2):after {
-    content: "Add Items";
-    line-height: 30px;
-    margin-top: 20px;
-    font-weight: 500;
+    content: "My Items";
+    line-height: 88px;
 }
 
 .sidebar-nav ul li:nth-child(3):after {
-    content: "My Items";
-    line-height: 30px;
-    margin-top: 20px;
-    font-weight: 500;
+    content: "Add";
+    line-height: 85px;
 }
 
 .sidebar-nav ul li:nth-child(4):after {
