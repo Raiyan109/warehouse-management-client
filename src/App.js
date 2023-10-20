@@ -16,11 +16,13 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import AdminDashboard from "./Pages/Admin/AdminDashboard";
 import Dashboard from "./Pages/User/Dashboard";
 import AdminPrivateRoute from "./Pages/Login/RequireAuth/AdminPrivateRoute";
+import { Toaster } from "react-hot-toast";
 
 
 function App() {
   return (
     <div className="">
+      <Toaster />
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>} ></Route>

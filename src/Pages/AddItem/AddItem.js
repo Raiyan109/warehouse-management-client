@@ -1,5 +1,8 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 const AddItem = () => {
     const [name, setName] = useState('')
     const [desc, setDesc] = useState('')
@@ -8,9 +11,20 @@ const AddItem = () => {
     const [quantity, setQuantity] = useState('')
     const [photo, setPhoto] = useState('')
 
+    const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault()
-
+        const { data } = axios.post('http://localhost:5000/api/items', {
+            name: name,
+            price: price,
+            desc: desc,
+            img: photo,
+            supplier: supplier,
+            quantity: quantity
+        })
+        toast.success("Item added successfully")
+        navigate('/manageinventory')
     };
     return (
         <div>
@@ -132,7 +146,7 @@ const AddItem = () => {
                         <button
 
                             type="submit" className="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
-                            Sign up
+                            Save
                         </button>
 
 
