@@ -10,20 +10,19 @@ export const AuthContextProvider = ({ children }) => {
         user: null,
         token: ''
     })
-    console.log(stockAuth);
 
-    // useEffect(() => {
-    //     const data = localStorage.getItem('auth')
-    //     if (data) {
-    //         const parsedData = JSON.parse(data)
-    //         setMernAuth({
-    //             ...mernAuth,
-    //             user: parsedData.user,
-    //             token: parsedData.token
-    //         })
-    //     }
-    //     // eslint-disable-next-line react-hooks/exhaustive-deps
-    // }, [])
+    useEffect(() => {
+        const data = localStorage.getItem('stockAuth')
+        if (data) {
+            const parsedData = JSON.parse(data)
+            setStockAuth({
+                ...stockAuth,
+                user: parsedData.user,
+                token: parsedData.token
+            })
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
 
 

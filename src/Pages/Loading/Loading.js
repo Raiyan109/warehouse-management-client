@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Loading.css'
+import { useLocation, useNavigate } from 'react-router-dom';
 
-const Loading = () => {
+const Loadingg = () => {
+    const [count, setCount] = useState(3)
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCount((prevValue) => --prevValue)
+        }, 1000)
+        count === 0 && navigate('/login', {
+            state: location.pathname
+        })
+        return () => clearInterval(interval)
+    }, [count, navigate, location])
+
+
     return (
-        <main>
+        <main className='flex justify-center items-center min-h-screen flex-col'>
+            <h1 className='text-2xl py-10'>Redirecting to you in {count} seconds</h1>
             <svg class="ip" viewBox="0 0 256 128" width="256px" height="128px" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0">
@@ -34,5 +51,5 @@ const Loading = () => {
     );
 };
 
-export default Loading;
+export default Loadingg;
 

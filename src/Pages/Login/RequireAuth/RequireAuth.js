@@ -1,24 +1,43 @@
-import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { Navigate, useLocation } from 'react-router-dom';
-import { auth } from '../../../firebase.init'
-import Loading from '../Loading/Loading';
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-const RequireAuth = ({ children }) => {
+import { useAuth } from "../../../context/AuthContext.js";
+import Loadingg from "../../Loading/Loading.js";
 
-    const [user, loading, error] = useAuthState(auth);
+const RequiredAuth = ({ children }) => {
+
+    // const [loading, error] = useAuthState(auth);
+    const { stockAuth, setStockAuth } = useAuth()
+    const [ok, setOk] = useState(false)
 
     const location = useLocation()
 
-    if (loading) {
-        return <Loading></Loading>
-    }
-    if (user) {
-        return children
-    }
-    else {
-        return <Navigate to='/login' state={{ from: location }} replace />
-    }
+    useEffect(() => {
+        const authCheck = async () => {
+            const { data } = await axios.get('http://localhost:5000/api/users/user-auth', {
+                headers: {
+                    'Authorization': stockAuth?.token
+                }
+            })
+            if (data.ok) {
+                setOk(true)
+            }
+            else {
+                setOk(false)
+            }
+        }
+        if (stockAuth?.token) authCheck()
+    }, [stockAuth?.token])
+
+    // if (loading) {
+    //     return <Loading></Loading>
+    // }
+
+    // if (!ok) {
+    //     return <Navigate to='/login' state={{ from: location }} replace />
+    // }
+    return ok ? children : <Loadingg />
 };
 
-export default RequireAuth;
+export default RequiredAuth;

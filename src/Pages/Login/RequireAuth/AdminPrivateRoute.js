@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import Loading from "./Loading/Loading.js";
-import { useAuth } from "../context/AuthContext";
+import Loading from "../Loading/Loading.js";
+import { useAuth } from "../../../context/AuthContext.js";
 
 const AdminPrivateRoute = ({ children }) => {
 
