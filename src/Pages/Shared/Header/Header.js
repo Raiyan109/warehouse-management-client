@@ -58,7 +58,7 @@ const Header = () => {
 
                         <NavLink to="/my" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My items</NavLink>
 
-                        {stockAuth?.user ? <button class="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={logout}>Signout</button> : <NavLink to="/login" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>}
+                        {stockAuth?.user ? <button className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={logout}>Signout</button> : <NavLink to="/login" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>}
 
                     </ul>
                 </div>

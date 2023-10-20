@@ -37,8 +37,8 @@ const ShopByCategory = () => {
                                         </a>
 
                                         {/* Detail */}
-                                        <div class="text-center mt-6">
-                                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                        <div className="text-center mt-6">
+                                            <h1 className="text-gray-900 text-xl font-bold mb-1">
                                                 Apparel
                                             </h1>
                                         </div>
@@ -54,8 +54,8 @@ const ShopByCategory = () => {
                                                 src={img2} alt='avatar' />
                                         </a>
                                         {/* Detail */}
-                                        <div class="text-center mt-6">
-                                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                        <div className="text-center mt-6">
+                                            <h1 className="text-gray-900 text-xl font-bold mb-1">
                                                 Footwear
                                             </h1>
                                         </div>
@@ -73,8 +73,8 @@ const ShopByCategory = () => {
                                         </a>
 
                                         {/* Detail */}
-                                        <div class="text-center mt-6">
-                                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                        <div className="text-center mt-6">
+                                            <h1 className="text-gray-900 text-xl font-bold mb-1">
                                                 Instruments
                                             </h1>
                                         </div>
@@ -91,8 +91,8 @@ const ShopByCategory = () => {
                                         </a>
 
                                         {/* Detail */}
-                                        <div class="text-center mt-6">
-                                            <h1 class="text-gray-900 text-xl font-bold mb-1">
+                                        <div className="text-center mt-6">
+                                            <h1 className="text-gray-900 text-xl font-bold mb-1">
                                                 Backpacks
                                             </h1>
                                         </div>

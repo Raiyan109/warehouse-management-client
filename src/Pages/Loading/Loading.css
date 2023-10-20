@@ -53,34 +53,34 @@
 /* Animation */
 @keyframes worm1 {
     from {
-        stroke-dashoffset: 0;
+        strokeDashoffset: 0;
     }
 
     50% {
         animation-timing-function: steps(1);
-        stroke-dashoffset: -358;
+        strokeDashoffset: -358;
     }
 
     50.01% {
         animation-timing-function: linear;
-        stroke-dashoffset: 358;
+        strokeDashoffset: 358;
     }
 
     to {
-        stroke-dashoffset: 0;
+        strokeDashoffset: 0;
     }
 }
 
 @keyframes worm2 {
     from {
-        stroke-dashoffset: 358;
+        strokeDashoffset: 358;
     }
 
     50% {
-        stroke-dashoffset: 0;
+        strokeDashoffset: 0;
     }
 
     to {
-        stroke-dashoffset: -358;
+        strokeDashoffset: -358;
     }
 }
