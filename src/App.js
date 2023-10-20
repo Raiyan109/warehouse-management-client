@@ -15,6 +15,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 
 import AdminDashboard from "./Pages/Admin/AdminDashboard";
 import Dashboard from "./Pages/User/Dashboard";
+import AdminPrivateRoute from "./Pages/Login/RequireAuth/AdminPrivateRoute";
 
 
 function App() {
@@ -37,11 +38,19 @@ function App() {
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
 
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+        }></Route>
 
-        <Route path="/dashboard" element={<RequireAuth />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<RequireAuth />}>
+          <Route path="user" element={<Dashboard />} />
         </Route>
 
+        <Route path="/dashboard" element={<AdminPrivateRoute />}>
+          <Route path="admin" element={<AdminDashboard />} />
+        </Route> */}
 
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
