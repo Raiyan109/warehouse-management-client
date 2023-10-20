@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 // import itemStyle from './Item.module.css'
+
 const Item = ({ item }) => {
     const { name, img, description, price, quantity, supplier, _id } = item
 

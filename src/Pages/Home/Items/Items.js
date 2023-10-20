@@ -3,7 +3,7 @@ import Item from '../Item/Item';
 
 const Items = () => {
     const [items, setItems] = useState([])
-    const slice = items.slice(0, 5)
+    const slice = items.slice(0, 4)
     useEffect(() => {
         const url = 'https://hiking-warehouse-server.vercel.app/api/items'
         console.log(url)
@@ -11,8 +11,7 @@ const Items = () => {
             .then(res => res.json())
             .then(data => setItems(data))
     }, [])
-    console.log(items);
-    console.log(slice);
+
     return (
         <div className=' py-12 sm:py-8 lg:py-12 px-5 md:mb-62 ' style={{ fontFamily: '"Lato", sans-serif' }}>
             <p className='text-[#F2921D] text-center text-xl'>Check our Warehouse</p>
