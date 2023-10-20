@@ -11,9 +11,11 @@ import ShopFeatures from '../ShopFeatures';
 import ShopByCategory from '../ShopByCategory';
 import Adventure from '../Adventure/Adventure';
 import Brands from '../Brands';
+import Header from '../../Shared/Header/Header';
 const Home = () => {
     return (
         <div>
+
             <Banner></Banner>
             <About />
             <Items></Items>

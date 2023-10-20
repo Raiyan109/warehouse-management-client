@@ -1,63 +1,63 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { auth } from '../../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import axios from 'axios';
+import { useAuth } from '../../../context/AuthContext';
 
 const Signup = () => {
     const navigate = useNavigate()
+    const location = useLocation()
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error1,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    const { stockAuth, setStockAuth } = useAuth()
 
-    // if (error) {
-    //     return <p>Error:{error.message}</p>
+
+
+    // const handleEmailChange = event => {
+    //     const emailRegex = /\S+@\S+\.\S+/
+    //     const validEmail = emailRegex.test(event.target.value)
+
+    //     if (validEmail) {
+    //         setEmail(event.target.value)
+    //     }
+    //     else {
+    //         setError('Invalid Email')
+    //     }
     // }
-    if (loading) {
-        return <Loading></Loading>
-    }
-    if (user) {
-        navigate('/home')
-    }
 
-    const handleEmailChange = event => {
-        const emailRegex = /\S+@\S+\.\S+/
-        const validEmail = emailRegex.test(event.target.value)
+    // const handlePasswordChange = event => {
+    //     const passwordRegex = /.{6,}/
+    //     const validPass = passwordRegex.test(event.target.value)
+    //     if (validPass) {
+    //         setPassword(event.target.value)
+    //     }
+    //     else {
+    //         setError('MInimum 6 charachters')
+    //     }
 
-        if (validEmail) {
-            setEmail(event.target.value)
-        }
-        else {
-            setError('Invalid Email')
-        }
-    }
-
-    const handlePasswordChange = event => {
-        const passwordRegex = /.{6,}/
-        const validPass = passwordRegex.test(event.target.value)
-        if (validPass) {
-            setPassword(event.target.value)
-        }
-        else {
-            setError('MInimum 6 charachters')
-        }
-
-    }
+    // }
 
 
-    const handleSignup = event => {
+    const handleSignup = async (event) => {
         event.preventDefault()
-        const email = event.target.email.value
-        const password = event.target.password.value
-
-        createUserWithEmailAndPassword(email, password)
+        const { data } = await axios.post('http://localhost:5000/api/users/signup', {
+            name,
+            email,
+            password,
+        })
+        navigate(location.state || '/login')
+        setStockAuth({
+            ...stockAuth,
+            user: data.user,
+            token: data.token
+        })
+        localStorage.setItem('userId', data._id)
+        console.log(data);
     }
     return (
         <div className="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
@@ -73,18 +73,19 @@ const Signup = () => {
                     <p className="text-lg font-medium">Sign up to your account</p>
 
                     <div>
-                        <label for="email" className="text-sm font-medium">Email</label>
+                        <label for="name" className="text-sm font-medium">Name</label>
 
                         <div className="relative mt-1">
                             <input
-                                onChange={handleEmailChange}
-                                type="email"
-                                id="email"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                type="text"
+                                id="name"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
-                                placeholder="Enter email"
+                                placeholder="Enter your name"
                             />
 
-                            <span className="absolute inset-y-0 inline-flex items-center right-4">
+                            {/* <span className="absolute inset-y-0 inline-flex items-center right-4">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-5 h-5 text-gray-400"
@@ -99,7 +100,39 @@ const Signup = () => {
                                         d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
                                     />
                                 </svg>
-                            </span>
+                            </span> */}
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="email" className="text-sm font-medium">Email</label>
+
+                        <div className="relative mt-1">
+                            <input
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                type="email"
+                                id="email"
+                                className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+                                placeholder="Enter email"
+                            />
+
+                            {/* <span className="absolute inset-y-0 inline-flex items-center right-4">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className="w-5 h-5 text-gray-400"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke="currentColor"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                    />
+                                </svg>
+                            </span> */}
                         </div>
                     </div>
 
@@ -108,14 +141,15 @@ const Signup = () => {
 
                         <div className="relative mt-1">
                             <input
-                                onChange={handlePasswordChange}
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
                                 type="password"
                                 id="password"
                                 className="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
                                 placeholder="Enter password"
                             />
 
-                            <span className="absolute inset-y-0 inline-flex items-center right-4">
+                            {/* <span className="absolute inset-y-0 inline-flex items-center right-4">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     className="w-5 h-5 text-gray-400"
@@ -136,7 +170,7 @@ const Signup = () => {
                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                                     />
                                 </svg>
-                            </span>
+                            </span> */}
                         </div>
                     </div>
 
@@ -150,7 +184,7 @@ const Signup = () => {
                         Already have an account?
                         <Link className="underline" to="/login">Log in</Link>
                     </p>
-                    <SocialLogin></SocialLogin>
+                    {/* <SocialLogin></SocialLogin> */}
                 </form>
             </div>
         </div>

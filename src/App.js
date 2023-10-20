@@ -13,6 +13,8 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Header from "./Pages/Shared/Header/Header";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 
+import AdminDashboard from "./Pages/Admin/AdminDashboard";
+
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
         <Route path='/' element={<Home></Home>} ></Route>
         <Route path='/home' element={<Home></Home>} ></Route>
         <Route path='/blogs' element={<Blogs></Blogs>} ></Route>
-        <Route path='/manage' element={<ManageItems></ManageItems>} ></Route>
+        <Route path='/dashboard/manage' element={<ManageItems></ManageItems>} ></Route>
         <Route path="/my" element={<MyItems></MyItems>}></Route>
         <Route path="/item/:inventoryId" element={
           <RequireAuth>
@@ -33,6 +35,9 @@ function App() {
         <Route path="/addItem" element={<AddItem></AddItem>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<Signup></Signup>}></Route>
+
+
+
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>

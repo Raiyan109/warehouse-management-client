@@ -1,18 +1,29 @@
 import React, { useState } from 'react';
 import { signOut } from 'firebase/auth';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../../firebase.init';
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { GiMountains } from 'react-icons/gi'
+import { useAuth } from '../../../context/AuthContext';
 
 
 const Header = () => {
     const [menu, setMenu] = useState(false)
-    const [user, loading, error] = useAuthState(auth);
+    const { stockAuth, setStockAuth } = useAuth()
+    const navigate = useNavigate()
+
 
     const logout = () => {
-        signOut(auth);
+        // signOut(auth);
+        setStockAuth({
+            ...stockAuth,
+            user: null,
+            token: ''
+        })
+        localStorage.removeItem('userId')
+        localStorage.removeItem('stockAuth')
+        navigate('/login')
     };
 
     return (
@@ -39,7 +50,7 @@ const Header = () => {
 
                         <NavLink to="/" className="block py-2 pr-4 pl-3 text-[#F2921D] bg-blue-700 rounded md:bg-transparent md:text-yellow-700 duration-300 md:p-0 dark:text-white">Home</NavLink>
 
-                        <NavLink to="/blogs" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blogs</NavLink>
+                        {/* <NavLink to="/blogs" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blogs</NavLink> */}
 
                         <NavLink to="/manage" className="block py-2 pr-4 pl-3 text-[#F2921D] border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Manage items</NavLink>
 
@@ -47,7 +58,7 @@ const Header = () => {
 
                         <NavLink to="/my" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">My items</NavLink>
 
-                        {user ? <button class="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={logout}>Signout</button> : <NavLink to="/login" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>}
+                        {stockAuth?.user ? <button class="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent" onClick={logout}>Signout</button> : <NavLink to="/login" className="block py-2 pr-4 pl-3 text-[#F2921D] hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-yellow-700 duration-200 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Login</NavLink>}
 
                     </ul>
                 </div>

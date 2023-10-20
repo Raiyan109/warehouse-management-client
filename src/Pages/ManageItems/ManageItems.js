@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Lottie from 'lottie-web';
 import lottieJson from '../../static/drawkit grape-animation-2-LOOP (1).json'
+import Layout from '../DashboardContainer/Layout/Layout';
 const ManageItems = () => {
     useEffect(() => {
         Lottie.loadAnimation({
@@ -13,8 +14,9 @@ const ManageItems = () => {
     }, [])
     return (
         <div>
-            <h1>manage items </h1>
-            <div id='lottie' style={{ width: 200, height: 200 }}></div>
+
+            <h1>Manage Items</h1>
+
         </div>
     );
 };
